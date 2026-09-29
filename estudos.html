@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de SOLID e Arquitetura de Software</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #1a73e8;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.2rem;
+            color: #202124;
+            border-bottom: 2px solid #e8eaed;
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+        .card {
+            background: #f8f9fa;
+            border-left: 4px solid #1a73e8;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        button:hover {
+            background-color: #1557b0;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            background: #e6f4ea;
+            border-left: 4px solid #34a853;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .theory-box {
+            background: #e8f0fe;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 Guia de Estudos: SOLID & Design Patterns</h1>
+    <p style="text-align: center; font-size: 0.9rem; color: #666;">Preparação para os exercícios da próxima semana</p>
+
+    <h2>📖 Revisão Rápida</h2>
+    <div class="theory-box">
+        <p><strong>SOLID:</strong> Princípios para criar códigos flexíveis[cite: 1, 2].</p>
+        <ul>
+            <li><strong>S:</strong> Uma classe/componente deve ter apenas uma razão para mudar[cite: 1].</li>
+            <li><strong>O:</strong> Aberto para extensão, fechado para modificação[cite: 1, 2].</li>
+            <li><strong>L:</strong> Subtipos devem ser substituíveis sem quebrar contratos[cite: 1].</li>
+            <li><strong>I:</strong> Interfaces segregadas (não force dependências inúteis)[cite: 2].</li>
+            <li><strong>D:</strong> Alto nível não deve depender de baixo nível; dependa de abstrações[cite: 2].</li>
+        </ul>
+    </div>
+
+    <h2>🧠 Exercícios Práticos com Gabarito</h2>
+
+    <!-- EXERCÍCIO 1 -->
+    <div class="card">
+        <div class="question">1. O que acontece quando um componente React assume a responsabilidade de buscar dados na API, gerir estados complexos e renderizar a interface ao mesmo tempo[cite: 1]?</div>
+        <button onclick="toggleAnswer('ans1', this)">Ver Gabarito 💡</button>
+        <div id="ans1" class="answer">
+            <strong>Gabarito:</strong> Ele viola o Princípio da Responsabilidade Única (S do SOLID)[cite: 1]. Se a API mudar ou o design mudar, o componente é afetado. A solução é separar a lógica de dados (serviços) da apresentação visual[cite: 1].
+        </div>
+    </div>
+
+    <!-- EXERCÍCIO 2 -->
+    <div class="card">
+        <div class="question">2. Como o padrão *Strategy* ajuda a evitar estruturas gigantescas de `if/else` no código[cite: 1]?</div>
+        <button onclick="toggleAnswer('ans2', this)">Ver Gabarito 💡</button>
+        <div id="ans2" class="answer">
+            <strong>Gabarito:</strong> O padrão *Strategy* isola cada comportamento ou regra de negócio num objeto ou função separada. Em vez de ramificar com vários `if/else`, o código principal mapeia dinamicamente qual estratégia executar, respeitando o princípio Aberto/Fechado[cite: 1].
+        </div>
+    </div>
+
+    <!-- EXERCÍCIO 3 -->
+    <div class="card">
+        <div class="question">3. Qual é a principal diferença entre módulos de **Alto Nível** e **Baixo Nível** numa aplicação[cite: 2]?</div>
+        <button onclick="toggleAnswer('ans3', this)">Ver Gabarito 💡</button>
+        <div id="ans3" class="answer">
+            <strong>Gabarito:</strong> O <strong>Alto Nível</strong> lida com as regras de negócio e a interface do utilizador (o "quê" o sistema faz). O <strong>Baixo Nível</strong> lida com os detalhes técnicos de infraestrutura, como conexões diretas a bases de dados ou bibliotecas de pedidos HTTP (o "como" o sistema faz)[cite: 2].
+        </div>
+    </div>
+
+    <!-- EXERCÍCIO 4 -->
+    <div class="card">
+        <div class="question">4. O que diz o Princípio da Inversão de Dependência (D do SOLID)[cite: 2]?</div>
+        <button onclick="toggleAnswer('ans4', this)">Ver Gabarito 💡</button>
+        <div id="ans4" class="answer">
+            <strong>Gabarito:</strong> Módulos de alto nível não devem depender diretamente de módulos de baixo nível; ambos devem depender de abstrações[cite: 2]. Isto reduz o acoplamento e facilita a substituição de tecnologias sem quebrar o código principal[cite: 2].
+        </div>
+    </div>
+
+    <!-- EXERCÍCIO 5 -->
+    <div class="card">
+        <div class="question">5. O que significa o princípio da Substituição de Liskov (L do SOLID) aplicado a componentes React[cite: 1]?</div>
+        <button onclick="toggleAnswer('ans5', this)">Ver Gabarito 💡</button>
+        <div id="ans5" class="answer">
+            <strong>Gabarito:</strong> Significa que um componente especializado (como um botão com ícone) deve poder substituir o seu componente base sem quebrar o contrato esperado pelas propriedades (`props`), garantindo um comportamento previsível[cite: 1].
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleAnswer(id, btn) {
+        var element = document.getElementById(id);
+        if (element.style.display === "block") {
+            element.style.display = "none";
+            btn.innerText = "Ver Gabarito 💡";
+        } else {
+            element.style.display = "block";
+            btn.innerText = "Ocultar Gabarito 🔒";
+        }
+    }
+</script>
+
+</body>
+</html>
